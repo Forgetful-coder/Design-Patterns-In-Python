@@ -16,7 +16,6 @@ class FurnitureFactory(IFurnitureFactory):
                 return ChairFactory.get_chair(furniture)
             if furniture in ['SmallTable', 'MediumTable', 'BigTable']:
                 return TableFactory.get_table(furniture)
-            raise Exception('No Factory Found')
-        except Exception as _e:
+        except ValueError as _e:
             print(_e)
         return None
